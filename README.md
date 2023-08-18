@@ -15,5 +15,5 @@ chmod 777 config/ data/
 ## Start Gitea Server
 
 ```sh
-cd gitea && docker-compose up -d
+cd gitea && docker-compose up -d gitea-server
 ```
