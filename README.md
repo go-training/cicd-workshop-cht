@@ -23,6 +23,9 @@ How to enable [Gitea Actions](https://docs.gitea.com/usage/actions/quickstart). 
 ```ini
 [actions]
 ENABLED=true
+
+[webhook]
+ALLOWED_HOST_LIST = your_server_ip
 ```
 
 ## Start Gitea Runner
