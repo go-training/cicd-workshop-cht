@@ -18,7 +18,7 @@ chmod 777 config/ data/
 cd gitea && docker-compose up -d gitea-server
 ```
 
-How to enable gitea actions. open `config/app.ini` file. add following lines.
+How to enable [Gitea Actions](https://docs.gitea.com/usage/actions/quickstart). open `config/app.ini` file. add following lines.
 
 ```ini
 [actions]
