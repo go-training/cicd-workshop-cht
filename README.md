@@ -17,3 +17,9 @@ chmod 777 config/ data/
 ```sh
 cd gitea && docker-compose up -d gitea-server
 ```
+
+## Start Gitea Runner
+
+```sh
+cd gitea && docker-compose up -d gitea-runner
+```
