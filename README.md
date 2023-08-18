@@ -6,7 +6,6 @@ CI/CD workshop
 mkdir -p gitea/{data,config}
 cd gitea
 touch docker-compose.yml
-sudo chown 1000:1000 config/ data/
 # chnage permission
-# chmod 777 config/ data/
+chmod 777 config/ data/
 ```
