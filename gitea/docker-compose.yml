@@ -12,3 +12,13 @@ services:
     ports:
       - "8088:3000"
       - "2222:2222"
+
+  gitea-runner:
+    image: gitea/act_runner:0.2.5
+    restart: always
+    volumes:
+      - ./data/act_runner:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - GITEA_INSTANCE_URL=<instance url>
+      - GITEA_RUNNER_REGISTRATION_TOKEN=<token>
