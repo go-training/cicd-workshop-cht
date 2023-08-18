@@ -27,8 +27,18 @@ ENABLED=true
 
 ## Start Gitea Runner
 
+Start Global Gitea Runner
+
 ```sh
 cd gitea && mkdir -p data/act_runner
 cd gitea && chmod 777 data/act_runner
 cd gitea && docker-compose up -d gitea-runner
+```
+
+Start User's Gitea Runner
+
+```sh
+cd gitea && mkdir -p data/act_user_runner
+cd gitea && chmod 777 data/act_user_runner
+cd gitea && docker-compose up -d gitea-user-runner
 ```
