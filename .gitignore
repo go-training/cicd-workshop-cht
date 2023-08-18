@@ -1,2 +1,3 @@
 gitea/config
 gitea/data
+drone/database.sqlite
