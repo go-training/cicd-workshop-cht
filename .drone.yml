@@ -3,8 +3,25 @@ type: docker
 name: default
 
 steps:
-- name: greeting
-  image: alpine:3
+- name: testing
+  image: golang:1.21
   commands:
-  - echo hello
-  - echo world
+  - go test -v .
+
+- name: publish
+  pull: always
+  image: thegeeklab/drone-docker-buildx:23
+  privileged: true
+  environment:
+    DRONE_REPO_BRANCH: main
+  settings:
+    Dockerfile: Dockerfile
+    auto_tag: true
+    password:
+      from_secret: docker_password
+    repo: appleboy/hello-drone-cht
+    username:
+      from_secret: docker_username
+    platforms:
+      - linux/amd64
+      - linux/arm64
