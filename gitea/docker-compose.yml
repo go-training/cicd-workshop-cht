@@ -20,15 +20,25 @@ services:
       - ./data/act_runner:/data
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - GITEA_INSTANCE_URL=http://gitea-server:3000
+      - GITEA_INSTANCE_URL=http://your_server_ip:8088
       - GITEA_RUNNER_REGISTRATION_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
   gitea-user-runner:
-    image: gitea/act_runner:0.2.5
+    image: gitea/act_runner:0.2.6
     restart: always
     volumes:
       - ./data/act_user_runner:/data
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - GITEA_INSTANCE_URL=http://gitea-server:3000
+      - GITEA_INSTANCE_URL=http://your_server_ip:8088
+      - GITEA_RUNNER_REGISTRATION_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+  gitea-org-runner:
+    image: gitea/act_runner:0.2.6
+    restart: always
+    volumes:
+      - ./data/act_org_runner:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - GITEA_INSTANCE_URL=http://your_server_ip:8088
       - GITEA_RUNNER_REGISTRATION_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
