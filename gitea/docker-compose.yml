@@ -2,7 +2,7 @@ version: "2"
 
 services:
   gitea-server:
-    image: gitea/gitea:1.20-rootless
+    image: gitea/gitea:1.21-rootless
     restart: always
     volumes:
       - ./data:/var/lib/gitea
@@ -14,7 +14,7 @@ services:
       - "2222:2222"
 
   gitea-runner:
-    image: gitea/act_runner:0.2.5
+    image: gitea/act_runner:0.2.6
     restart: always
     volumes:
       - ./data/act_runner:/data
